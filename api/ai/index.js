@@ -9,7 +9,7 @@ function createAi(request, response) {
       request.query["hub.challenge"]
     );
 
-    if (data) response.send(data);
+    if (data) return response.status(status).send(data);
 
     return response.status(status);
   } else if (request.method === "POST" && request.body.entry) {
